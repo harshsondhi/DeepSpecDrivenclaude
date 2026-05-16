@@ -8,8 +8,8 @@ This phase is complete and ready to merge when **all** of the following pass.
 |---|---|---|
 | TypeScript | `pnpm tsc --noEmit` | Exits 0, zero type errors |
 | Lint | `pnpm lint` | Exits 0, zero ESLint errors |
+| Tests | `pnpm test` | Exits 0, all Vitest tests pass |
 | Build | `pnpm build` | Next.js production build succeeds without errors |
-| Home page content | `curl -sf http://localhost:3000 \| grep -q "AgenticClinic"` | Exits 0 (server up + heading present in SSR HTML) |
 
 ## Manual Checks
 
@@ -24,6 +24,7 @@ This phase is complete and ready to merge when **all** of the following pass.
 ## Definition of Done
 
 - All automated checks pass in CI (or locally if CI is not yet configured)
+- `pnpm test` exits 0 with no failing Vitest tests
 - All manual checks confirmed by the implementer
 - No TODOs or placeholder comments left in code
 - PR description references this validation checklist

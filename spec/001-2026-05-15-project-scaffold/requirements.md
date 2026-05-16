@@ -11,6 +11,7 @@ Set up the foundational project structure for AgenticClinic. This phase produces
 | Package manager | pnpm | Specified in tech-stack.md; faster installs, disk-efficient |
 | Router | App Router only | No Pages Router; aligns with tech-stack.md and Next.js best practices |
 | Component library | shadcn/ui init included | Tech-stack.md specifies shadcn/ui; better to wire it in from the start than retrofit |
+| Test runner | Vitest | Specified in tech-stack.md; fast, native TypeScript support, no separate config for module aliases |
 | Scope boundary | Roadmap Phase 1 only | No early feature work; keep this branch focused and mergeable fast |
 
 ## Context
@@ -19,7 +20,7 @@ Set up the foundational project structure for AgenticClinic. This phase produces
 
 **Why this phase first:** The current repo contains only a plain TypeScript stub (`src/index.ts`). All subsequent phases (landing page, data model, agent list, etc.) require a Next.js foundation. This phase creates that foundation and establishes the clinic's identity on the home page.
 
-**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · shadcn/ui · ESLint · Prettier · pnpm  
+**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · shadcn/ui · ESLint · Prettier · Vitest · pnpm  
 Full details in `spec/tech-stack.md`.
 
 ## Out of Scope

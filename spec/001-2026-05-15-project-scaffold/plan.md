@@ -36,9 +36,18 @@ Each of the three layout pieces lives in its own file under `components/layout/`
 5.5 Import `styles/layout.css` in `app/layout.tsx` and wrap `{children}` with `<MainLayout>`  
 5.6 Update `app/page.tsx` to remove the `<main>` wrapper (now provided by `MainLayout`)
 
-## 6. Smoke Test
+## 6. Configure Vitest
 
-6.1 Run `pnpm dev` and verify the dev server starts on `localhost:3000` without errors  
-6.2 Open `localhost:3000` in a browser and confirm the home page renders with header, content, and footer  
-6.3 Run `pnpm tsc --noEmit` and confirm zero TypeScript errors  
-6.4 Run `pnpm lint` and confirm zero ESLint errors
+6.1 Install `vitest` as a dev dependency  
+6.2 Create `vitest.config.ts` — set environment to `node`, include `**/__tests__/**/*.test.ts(x)`, configure `@/` path alias to match `tsconfig.json`  
+6.3 Add `"test": "vitest run"` and `"test:watch": "vitest"` scripts to `package.json`  
+6.4 Create `__tests__/utils.test.ts` — unit tests for `cn()` in `lib/utils.ts` (class merging, conflict resolution, falsy filtering)  
+6.5 Run `pnpm test` and confirm all tests pass
+
+## 7. Smoke Test
+
+7.1 Run `pnpm dev` and verify the dev server starts on `localhost:3000` without errors  
+7.2 Open `localhost:3000` in a browser and confirm the home page renders with header, content, and footer  
+7.3 Run `pnpm tsc --noEmit` and confirm zero TypeScript errors  
+7.4 Run `pnpm lint` and confirm zero ESLint errors  
+7.5 Run `pnpm test` and confirm all Vitest tests pass
