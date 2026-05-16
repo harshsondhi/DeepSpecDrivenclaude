@@ -25,9 +25,20 @@
 4.3 Apply Tailwind utility classes for basic centering and readable typography — no custom CSS  
 4.4 Confirm the page uses no placeholder lorem ipsum text; all copy reflects the actual mission
 
-## 5. Smoke Test
+## 5. Main Layout Component
 
-5.1 Run `pnpm dev` and verify the dev server starts on `localhost:3000` without errors  
-5.2 Open `localhost:3000` in a browser and confirm the home page renders with the clinic name and tagline  
-5.3 Run `pnpm tsc --noEmit` and confirm zero TypeScript errors  
-5.4 Run `pnpm lint` and confirm zero ESLint errors
+Each of the three layout pieces lives in its own file under `components/layout/`. No layout logic is co-located in `app/layout.tsx` — that file only wires them together.
+
+5.1 Create `components/layout/Header.tsx` — site header with clinic name and nav placeholder  
+5.2 Create `components/layout/Footer.tsx` — site footer with copyright line  
+5.3 Create `components/layout/MainLayout.tsx` — wrapper that imports Header and Footer, and renders a `<main>` slot between them; this is the only file that composes the three pieces  
+5.4 Create `styles/layout.css` with base styles for header, main, and footer  
+5.5 Import `styles/layout.css` in `app/layout.tsx` and wrap `{children}` with `<MainLayout>`  
+5.6 Update `app/page.tsx` to remove the `<main>` wrapper (now provided by `MainLayout`)
+
+## 6. Smoke Test
+
+6.1 Run `pnpm dev` and verify the dev server starts on `localhost:3000` without errors  
+6.2 Open `localhost:3000` in a browser and confirm the home page renders with header, content, and footer  
+6.3 Run `pnpm tsc --noEmit` and confirm zero TypeScript errors  
+6.4 Run `pnpm lint` and confirm zero ESLint errors

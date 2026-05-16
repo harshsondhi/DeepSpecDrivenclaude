@@ -19,3 +19,15 @@ add target audienceto the mission:
 - course students learning pec-driven development with AI coding agents
 - developers giving AI coding demos at conference booths
 =====
+
+
+=========
+Add a task group to the plan ti have a minimal AgenticClinic home page and update the rest of the feature spec to be sync
+
+
+ pnpm dev &
+   sleep 5
+   curl -sf http://localhost:3000 | grep -o "AgenticClinic" | head -2
+   echo "CURL_EXIT:$?"
+   kill %1 2>/dev/null || true
+   Start dev server, check for AgenticClinic in HTML, then stop
