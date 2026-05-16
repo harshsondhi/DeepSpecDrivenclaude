@@ -28,6 +28,7 @@
 
 - **ESLint** + **Prettier** — code quality and formatting
 - **pnpm** — fast, disk-efficient package manager
+- **Vitest** — unit and integration test runner; used for all automated validation checks (`pnpm test`)
 
 ## Hosting (future)
 
